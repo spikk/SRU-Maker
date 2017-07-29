@@ -1,5 +1,5 @@
 var uppifter = { 
-	"INK2R-2014": [
+	"INK2R-2016": [
 		{"namn": "Räkenskapsårets början", "id": "7011", "typ": "Datum_D"},
 		{"namn": "Räkenskapsårets slut", "id": "7012", "typ": "Datum_D"},
 		{"namn": "2.1 Immateriella anläggningstillgångar Koncessioner, patent, licenser, varumärken, hyresrätter, goodwill och liknande rättigheter", "id": "7201", "typ": "Numeriskt_A"},
@@ -87,7 +87,7 @@ var uppifter = {
 		{"namn": "3.27 Årets resultat, vinst (flyttas till p. 4.1)", "id": "7450", "typ": "Numeriskt_B"},
 		{"namn": "3.28 Årets resultat, förlust (flyttas till p. 4.2)", "id": "7550", "typ": "Numeriskt_B"}
 	],
-	"INK2S-2014": [
+	"INK2S-2016": [
 		{"namn": "4.1 Årets resultat, vinst", "id": "7650", "typ": "Numeriskt_B"},
 		{"namn": "4.2 Årets resultat, förlust", "id": "7750", "typ": "Numeriskt_B"},
 		{"namn": "4.3a. Bokförda kostnader som inte ska dras av: a. Skatt på årets resultat", "id": "7651", "typ": "Numeriskt_A"},
@@ -135,7 +135,7 @@ var uppifter = {
 		{"namn": "Årsredovisningen har varit föremål för revision: Ja", "id": "8044", "typ": "Str_X"},
 		{"namn": "Årsredovisningen har varit föremål för revision: Nej", "id": "8045", "typ": "Str_X"}            
     ],
-	"INK3-2014": [
+	"INK3-2016": [
 		{"namn": "Räkenskapsårets början", "id": "7011", "typ": "Datum_D"},
 		{"namn": "Räkenskapsårets slut", "id": "7012", "typ": "Datum_D"},
 		{"namn": "1.1 Överskott", "id": "7106", "typ": "Numeriskt_B"},
@@ -157,7 +157,7 @@ var uppifter = {
 		{"namn": "Övriga upplysningar på bilaga", "id": "90", "typ": "Str_X"},
 	],
 
-	"INK3K-2014": [
+	"INK3K-2016": [
 		{"namn": "Räkenskapsårets början", "id": "7011", "typ": "Datum_D"},
 		{"namn": "Räkenskapsårets slut", "id": "7012", "typ": "Datum_D"},
 		{"namn": "2.1 Resultat från handelsbolagsandel enligt blankett N3B Överskott", "id": "8602", "typ": "Numeriskt_B"},
@@ -180,7 +180,7 @@ var uppifter = {
 		{"namn": "2.17 Underskott", "id": "8710", "typ": "Numeriskt_B"}    
 	],
 
-	"INK3R-2014": [
+	"INK3R-2016": [
 		{"namn": "Räkenskapsårets början", "id": "7011", "typ": "Datum_D"},
 		{"namn": "Räkenskapsårets slut", "id": "7012", "typ": "Datum_D"},
 		{"namn": "5.1 Immateriella anläggningstillgångar", "id": "8720", "typ": "Numeriskt_A"},
@@ -255,7 +255,7 @@ var uppifter = {
 		{"namn": "6.23 Justerat resultat, förlust (som ska tas upp/dras av)", "id": "8785", "typ": "Numeriskt_B"}    
 	],
 
-	"INK3S-2014": [
+	"INK3S-2016": [
 		{"namn": "Räkenskapsårets början", "id": "7011", "typ": "Datum_D"},
 		{"namn": "Räkenskapsårets slut", "id": "7012", "typ": "Datum_D"},
 		{"namn": "7.1 Justerat resultat från föregående sida p.6.23, vinst", "id": "8686", "typ": "Numeriskt_B"},
@@ -283,7 +283,7 @@ var uppifter = {
 		{"namn": "Årsredovisningen har varit föremål för revision: Nej", "id": "8045", "typ": "Str_X"}
 	],
 
-	"INK3SU-2014": [
+	"INK3SU-2016": [
 		{"namn": "Räkenskapsårets början", "id": "7011", "typ": "Datum_D"},
 		{"namn": "Räkenskapsårets slut", "id": "7012", "typ": "Datum_D"},
 		{"namn": "Stiftelsens ändamål enligt stadgarna - Idrott", "id": "8806", "typ": "Str_X"},
@@ -337,7 +337,7 @@ var uppifter = {
 		{"namn": "4.14 Föreningar/Trossamfund: Kostnader under beskattningsåret: Övriga kostnader", "id": "8719", "typ": "Numeriskt_A"}    
 	],
 
-    "INK4DU-2014": [
+    "INK4DU-2016": [
 		{"namn": "Bolaget är ett utländskt bolag", "id": "7050", "typ": "Str_X"},
 		{"namn": "Räkenskapsårets början", "id": "7011", "typ": "Datum_D"},
 		{"namn": "Räkenskapsårets slut", "id": "7012", "typ": "Datum_D"},
@@ -504,7 +504,7 @@ var uppifter = {
 		{"namn": "Andel avdrag arbetsgivaravgift", "id": "8105", "typ": "Numeriskt_B"},
     ],
 
-	"INK4R-2014": [
+	"INK4R-2016": [
 		{"namn": "Räkenskapsårets början", "id": "7011", "typ": "Datum_D"},
 		{"namn": "Räkenskapsårets slut", "id": "7012", "typ": "Datum_D"},
 		{"namn": "2.1 Immateriella anläggningstillgångar, Koncessioner, patent, licenser, varumärken, hyresrätter, goodwill och liknande rättigheter", "id": "7201", "typ": "Numeriskt_A"},
@@ -568,7 +568,7 @@ var uppifter = {
 		{"namn": "3.19 Årets resultat, förlust", "id": "7550", "typ": "Numeriskt_B"}
     ],
 
-    "INK4S-2014": [
+    "INK4S-2016": [
 		{"namn": "Räkenskapsårets början", "id": "7011", "typ": "Datum_D"},
 		{"namn": "Räkenskapsårets slut", "id": "7012", "typ": "Datum_D"},
 		{"namn": "4.1 Årets resultat, vinst", "id": "7650", "typ": "Numeriskt_B"},

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>SRU Maker</title>
+                <meta charset="ISO-8859-1">
+
+                <!-- Latest compiled and minified CSS -->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+                <!-- Latest compiled and minified JavaScript -->
+                <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                
+                <script type="text/javascript" src="src/SRUMaker.js"></script>
+                <script type="text/javascript" src="src/uppgifter_2016.js"></script>
+                <style type="text/css">
+
+                    input:invalid, input:focus:invalid {
+                          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);
+                          background-position: right top;
+                          background-repeat: no-repeat;
+                          -moz-box-shadow: none;
+                    }
+                    input:not([type=submit]):valid {
+                          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAepJREFUeNrEk79PFEEUx9/uDDd7v/AAQQnEQokmJCRGwc7/QeM/YGVxsZJQYI/EhCChICYmUJigNBSGzobQaI5SaYRw6imne0d2D/bYmZ3dGd+YQKEHYiyc5GUyb3Y+77vfeWNpreFfhvXfAWAAJtbKi7dff1rWK9vPHx3mThP2Iaipk5EzTg8Qmru38H7izmkFHAF4WH1R52654PR0Oamzj2dKxYt/Bbg1OPZuY3d9aU82VGem/5LtnJscLxWzfzRxaWNqWJP0XUadIbSzu5DuvUJpzq7sfYBKsP1GJeLB+PWpt8cCXm4+2+zLXx4guKiLXWA2Nc5ChOuacMEPv20FkT+dIawyenVi5VcAbcigWzXLeNiDRCdwId0LFm5IUMBIBgrp8wOEsFlfeCGm23/zoBZWn9a4C314A1nCoM1OAVccuGyCkPs/P+pIdVIOkG9pIh6YlyqCrwhRKD3GygK9PUBImIQQxRi4b2O+JcCLg8+e8NZiLVEygwCrWpYF0jQJziYU/ho2TUuCPTn8hHcQNuZy1/94sAMOzQHDeqaij7Cd8Dt8CatGhX3iWxgtFW/m29pnUjR7TSQcRCIAVW1FSr6KAVYdi+5Pj8yunviYHq7f72po3Y9dbi7CxzDO1+duzCXH9cEPAQYAhJELY/AqBtwAAAAASUVORK5CYII=);
+                          background-position: right top;
+                          background-repeat: no-repeat;
+                    }
+
+                </style>
+        </head>
+        <body>
+                <h1>Skapa dina SRU filer</h1>
+                <p>För att testa de skapade filerna så gå in på följande sida <a href='https://www1.skatteverket.se/fv/fv_web/login.do' target='_blank'>https://www1.skatteverket.se/fv/fv_web/login.do</a> hos skatteverket</p>
+                <p>För att kontrollera testerna gå till <a href='SpecRunner.html'>SpecRunner</a></p>
+                <p>Se <a href="http://aidium.se/2013/11/tdd-with-jasmine/">aidium.se/2013/11/tdd-with-jasmine/</a> för en beskrivning hur detta är implementerat</p>
+                <p>
+                   Denna sida skapades då de inte fanns något enkelt sätt att skapa dessa filer på. 
+                   Skatteverket tillhandahåller inget program vad jag vet och de bokföringsprogram jag använder gör det inte heller.
+                   Lösningen var att antingen göra dessa filer för hand eller skapa en lite mer stabil lösning i form av denna sida.
+                </p>
+                <p>
+                   Jag tar inget ansvar i fall någon informaton hamnar fel, men hjälper gärna till att rätta dessa och bidra med spontan support.
+                   Kontaktuppgifter finns på <a href="http://aidium.se/contact">aidium.se/contact</a>.
+                </p>
+
+                <div>
+                    <form id='infoSruForm' onSubmit='return skapaInfoSruFil(this)'>
+                        Inlämnarens OrgNr: <input type='text' name='orgNr' pattern='[1-2][0-9]{11}' title='Org eller personnummer utan - eller +. Juridiska personer inleds med 16' size='14' maxlength='12' required /><br/>
+                        Inlämnarens Namn: <input type='text' name='namn' required /><br/>
+                        Inlämnarens PostNr: <input type='text' name='postNr' pattern='[1-9][0-9]{4}' size='7' maxlength='5' required /><br/>
+                        Inlämnarens PostOrt: <input type='text' name='postOrt' required /><br/>
+                        <input type='submit' value='Generera INFO SRU' />
+                    </form>
+                </div>
+
+                <div id='divBlankett' style='display: none'>
+                    <form id='nyBlankettForm' onSubmit='return nyBlankett(this)'>
+                        Blankett: 
+                        <select name='blankettId'>
+                                <option value="INK2R-2016">Räkenskapsschema INK2R 2016</option>
+                                <option value="INK2S-2016">Skattemässiga justeringar INK2S 2016</option>
+                                <option value="INK3-2016">Ideella föreningar, stiftelser m.fl. INK3 2016</option>
+                                <option value="INK3K-2016">Kapitalinkomster m.m. INK3K 2016</option>
+                                <option value="INK3R-2016">Räkenskapsschema INK3R 2016</option>
+                                <option value="INK3S-2016">Skattemässiga justeringar INK3S 2016</option>
+                                <option value="INK3SU-2016">Särskild uppgift - Stiftelse INK3SU 2016</option>
+                                <option value="INK4DU-2016">Delägaruppgifter Handelsbolag INK4DU 2016</option>
+                                <option value="INK4R-2016">Räkenskapsschema INK4R 2016</option>
+                                <option value="INK4S-2016">Skattemässiga justeringar INK4S 2016</option>
+                        </select><br/>
+                        Sista dagen på räkenskapsåret mellan<select name='periodId'>
+                                <option value="P1">P1: 20160101-20160430</option>
+                                <option value="P2">P2: 20160501-20160630</option>
+                                <option value="P3">P3: 20160701-20160831</option>
+                                <option value="P4">P4: 20160901-20161231</option>
+                                <option value="P4INK1">P4INK1: 20161231-20161231</option>
+                        </select><br/>
+                        OrgNr: <input type='text' name='orgNr' pattern='[1-2][0-9]{11}' title='Org eller personnummer utan - eller +. Juridiska personer inleds med 16' size='14' maxlength='12' required /><br/>
+                        Namn: <input type='text' name='namn' /><br/>
+                        <input type='submit' value='Lägg till ny blankett' />
+                    </form>
+                </div>
+
+                <div id='divBlankettData' style='display: none'>
+                    <form id='blankettDataForm' onSubmit='return fyllIBlankett(this)'>
+                        <table id='tblUppgifter'></table>
+                        <input type='submit' value='Lägg till uppgifter' />
+                    </form>
+                </div>
+
+                <div id='divResultat' style='display: none'>
+                        <h2>Genererade filer</h2>
+                        <div>
+                                <h3>INFO.SRU</h3>
+                                <div id='infoSru'></div>
+                                <a id='lnkInfoSru' href='javascript:void(0);'>Ladda ner INFO.SRU</a>
+                        </div>
+                        <div id='divBlanketterSru' style='display: none'>
+                                <h3>BLANKETTER.SRU</h3>
+                                <div id='blanketterSru'></div>
+                                <a id='lnkBlanketterSru' href='javascript:void(0)'>Ladda ner BLANKETTER.SRU</a>
+                        </div>
+                </div>
+                <script>
+				var fil = new Fil();
+                        var nuvrandeBlankett = null;
+
+                        function skapaInfoSruFil(form) {
+
+                                var infoSru = genereraInfoSru(form[0].value,
+                                                              form[1].value,
+                                                              form[2].value,
+                                                              form[3].value);
+                                document.getElementById('divResultat').style.display = 'block';
+                                document.getElementById('divBlankett').style.display = 'block';
+                                document.getElementById('infoSru').innerHTML = infoSru;
+                                
+                                document.getElementById('lnkInfoSru').onclick = function() {genereraFil('INFO.SRU', infoSru.replace(/<br\/>/g,'\n')); };
+                                return false;
+                        }
+
+                        function genereraFil(namn, data) {
+                                var form = document.createElement('form');
+                                form.setAttribute('method', 'post');
+                                form.setAttribute('action', 'fileMaker.php');
+                                form.setAttribute('target', '_blank');
+
+                                form.appendChild(skapaGömtFält('name', namn));
+                                form.appendChild(skapaGömtFält('data', data));
+                                document.body.appendChild(form);
+                                form.submit();
+                                document.body.removeChild(form);
+                        }
+
+                        function skapaGömtFält(name, value) {
+                                var hiddenField = document.createElement("input");
+                                hiddenField.setAttribute("type", "hidden");
+                                hiddenField.setAttribute("name", name);
+                                hiddenField.setAttribute("value", value);
+                                return hiddenField;
+                        }
+
+                        function nyBlankett(form) {
+
+                                var blankettId = form[0].value + form[1].value;
+
+                                nuvrandeBlankett = new Blankett(blankettId, form[2].value);
+                                if (form[3].value != "") {
+                                        nuvrandeBlankett.infogaNamn(form[3].value);
+                                }
+                                fil.infogaBlankett(nuvrandeBlankett);
+
+                                uppdateraMöjligaUppgifter(form[0].value);
+
+                                uppdateraBlanketterSru();
+
+                                document.getElementById('divBlankettData').style.display = 'block';
+
+                                return false;
+                        }
+
+                        function fyllIBlankett(form) {
+                                for (var i = 0; i < (form.length - 1); i++) {
+                                        if (form[i].value != "" && form[i].value != "0") {
+                                                nuvrandeBlankett.nyUppgift(form[i].name, form[i].value);
+                                        }
+                                }
+                                uppdateraBlanketterSru();
+
+                                document.getElementById('divBlankettData').style.display = 'none';
+				
+                                return false;
+                        }
+
+                        function uppdateraBlanketterSru() {
+                                var blanketterSru = genereraBlanketterSru(fil);
+                                document.getElementById('divBlanketterSru').style.display = 'block';
+                                document.getElementById('blanketterSru').innerHTML = blanketterSru;
+
+                                document.getElementById('lnkBlanketterSru').onclick = function() {genereraFil('BLANKETTER.SRU', blanketterSru.replace(/<br\/>/g,'\n')); };
+                        }
+
+                        function uppdateraMöjligaUppgifter(blankettId) {
+                                var tillgängligaUppgifter = uppifter[blankettId] || [];
+                                var tblBody = document.createElement("tbody");
+                                var tr;
+
+                                for (var i = 0; i < tillgängligaUppgifter.length; ++i) {
+                                        tr = document.createElement('tr');
+                                        tblBody.appendChild(tr);
+
+                                        var uppgift = tillgängligaUppgifter[i];
+
+                                        var td = document.createElement('td');
+                                        var label = document.createElement('label');
+
+                                        label.for = uppgift.id;
+                                        label.innerHTML = uppgift.namn;
+                                        label.title = uppgift.id;
+
+                                        var input = document.createElement('input');
+                                        input.name = uppgift.id;
+                                        input.id = uppgift.id;
+                                        input.title = "(" + uppgift.id + ") ";
+
+                                        if (uppgift.typ == "Str_X") {
+                                                input.type = 'text';
+                                                input.pattern = '[X]?';
+                                                input.size = '1';
+                                                input.maxlength = '1';
+                                                input.title += "X eller blankt"
+                                        } else if (uppgift.typ == "Numeriskt_A") {
+                                                input.type = 'text';
+                                                input.pattern = '-?[1-9]\\d{0,11}|0?';
+                                                input.size = '15';
+                                                input.maxlength = '13';
+                                                input.title += "Numeriskt mellan -999999999999 och 999999999999";
+                                        } else if (uppgift.typ == "Numeriskt_B") {
+                                                input.type = 'text';
+                                                input.pattern = '[1-9]\\d{0,11}|0?';
+                                                input.size = '15';
+                                                input.maxlength = '12';
+                                                input.title += "Numeriskt mellan 0 och 999999999999";
+                                        } else if (uppgift.typ == "Datum_A" || uppgift.typ == "Datum_D") {
+                                                input.type = 'text';
+                                                input.pattern = "[1-2][0-9]{3}[0-1][0-9][0-3][0-9]";
+                                                input.size = '10';
+                                                input.maxlength = '8';
+                                                input.required = 'required';
+                                                input.title += "Datum ÅÅÅÅMMDD";
+                                        } else if (uppgift.typ == "Numeriskt_G") {
+                                                input.type = 'text';
+                                                input.pattern = '[1-9]\\d{0,1}|100';
+                                                input.size = '6';
+                                                input.maxlength = '3';
+                                                input.title += "Numeriskt mellan 1 och 100";
+                                        } else if (uppgift.typ == "Str_36") {
+                                                input.type = 'text';
+                                                input.size = '39';
+                                                input.maxlength = '36';
+                                                input.title += "Text";
+                                        } else if (uppgift.typ == "Orgnr_Id") {
+                                                input.typ = 'text';
+                                                input.pattern = "[1-2][0-9]{11}";
+                                                input.title = 'Org eller personnummer utan - eller +. Juridiska personer inleds med 16';
+                                                input.size = '14';
+                                                input.maxlength = '12';
+                                        }
+                                        
+                                        td.appendChild(input);
+                                        td.appendChild(label);
+                                        tr.appendChild(td);
+                                }
+
+                                var tabell = document.getElementById('tblUppgifter');
+                                if (tabell.lastChild != null) {
+                                        tabell.removeChild(tabell.lastChild);
+                                }
+                                tabell.appendChild(tblBody);
+                        }
+				</script>
+
+        </body>
+</html>
